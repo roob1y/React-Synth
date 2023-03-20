@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PlayBtn({ type, masterFreq }) {
+export default function Output({ type, masterFreq }) {
   function playSound() {
     const actx = new (AudioContext || webkitAudioContext)();
     if (!actx) throw "Not supported!";
@@ -11,9 +11,4 @@ export default function PlayBtn({ type, masterFreq }) {
     osc.start();
     osc.stop(actx.currentTime + 2);
   }
-  return (
-    <button id="play" onClick={playSound}>
-      Play
-    </button>
-  );
 }

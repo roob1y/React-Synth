@@ -2,14 +2,16 @@ import React from "react";
 
 export default function OscSlider({ setType }) {
   const waveForms = {
-    0: 'sawtooth',
-    1: 'sine',
-    2: 'square',
-    3: 'triangle',
-  }
+    0: "sawtooth",
+    1: "sine",
+    2: "square",
+    3: "triangle",
+  };
+
   function handleTypeChange() {
     setType(waveForms[event.target.value]);
   }
+
   return (
     <>
       <input

@@ -83,4 +83,17 @@ I will create a js function which works this out.
 The formula now works but i need to work out how to use it with the key range of my minimoog. My formula starts with a A-4, but i need F-0 to C-4. This means that i need 52 semitones lower that 440 Hz to get the correct default. There are also 44 keys on a minimoog.
 
 LO = -52, -9
-32 = 
+32 = -40
+16 = -28
+8 = -16
+4 = -4
+2 = 8
+
+DAY 5
+
+### Developing a knob
+
+I have create an intractive knob to use the parameter of my synth. I wanted it to have similar feel to the original analog classic. A lot of maths is involved to make this work. You can get a full range knob to work with parameters that need a sweeping value (like a volume knob) and a stepper knob that can select between different values. The amount of degrees can be set using the *degrees* atribute and the type of dial can be select via the *type* attribute.
+
+type => "fullRange"|| n (number)
+degrees => 0 - 360 (number)

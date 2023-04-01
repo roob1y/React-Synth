@@ -2,50 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
+}
+body {
+  margin: 0;
+  background-image: radial-gradient(30% 50%, #555 6%, #333 90%);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Knob Styling */
+
+.frontPanel {
+  height: 720px;
+  background-color: #222;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.knob {
+  display: flex;
+  position: relative;
 }
-button:hover {
-  border-color: #646cff;
+.knob .ticks {
+  position: absolute;
+}
+.knob .ticks .tick {
+  position: absolute;
+  background: white;
+  width: 3px;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.knob .ticks .tick.active {
+  background-color: orange;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-input[type="range"] {
-  appearance: none;
+.knob.outer {
+  border-radius: 50%;
   border: 1px solid #222;
+  border-bottom: 5px solid #222;
+  background-image: radial-gradient(100% 70%, #666 6%, #333 90%);
+  box-shadow: 0 5px 15px 2px #333, 0 0 5px 3px #444, 0 0 0 6px #222;
+}
+
+.knob.inner {
+  border-radius: 50%;
+}
+
+.knob.inner .grip {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 3px 1px black;
 }

@@ -1,17 +1,33 @@
 import React, { useState, useEffect } from "react";
 
-export default function Key({ note, freq, setFreq, setIsClicked }) {
+export default function Key({
+  note,
+  freq,
+  setFreq,
+  setKeyClicked,
+  currentNote,
+  detectKeyDown,
+  detectKeyUp,
+  playSound,
+  actx,
+  setCurrentNote
+}) {
   const [showNote, setShowNote] = useState(true);
 
-  function keyClickHandler() {
-    console.log(freq);
+  function handleMouseDown() {
     setFreq(freq);
-    setIsClicked(true)
+    setKeyClicked(true);
+    detectKeyDown({ key: note, code: "onScreenKey" }, currentNote);
+  }
+
+  function handleMouseUp() {
+    setKeyClicked(false);
+    detectKeyUp({ key: note, code: "onScreenKey" }, currentNote);
   }
 
   let noteIsIncidentalClassName = showNote
-    ? "z-10 border border-black text-4xl font-semibold text-black h-80 w-16"
-    : "z-10 bg-black -mx-4 relative text-4xl h-52 w-7 font-semibold text-black";
+    ? "text-4xl h-80 w-16"
+    : "bg-black -mx-4 absolute h-52 w-7";
 
   useEffect(() => {
     if (note.length > 1) {
@@ -22,8 +38,14 @@ export default function Key({ note, freq, setFreq, setIsClicked }) {
   }, [note]);
 
   return (
-    <div onClick={() => keyClickHandler()} className="cursor-pointer bg-white">
-      <div className={noteIsIncidentalClassName}>
+    <div
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      className="cursor-pointer bg-white"
+    >
+      <div
+        className={`font-semibold" + z-10 border border-black text-black ${noteIsIncidentalClassName}`}
+      >
         {showNote ? <p className="bottom-0 translate-y-64">{note}</p> : null}
       </div>
     </div>

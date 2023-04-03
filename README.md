@@ -97,3 +97,7 @@ I have create an intractive knob to use the parameter of my synth. I wanted it t
 
 type => "fullRange"|| n (number)
 degrees => 0 - 360 (number)
+
+### making computer keyboard work with audio web api
+
+I have created some code to use the keyboard using event listeners  on key down and up events. I have an issue where the audio cuts after after too many presses are made consecutively. I hope to sort this bug out soon.

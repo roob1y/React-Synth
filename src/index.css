@@ -11,6 +11,11 @@ body {
   background-image: radial-gradient(30% 50%, #555 6%, #333 90%);
 }
 
+button {
+  background-color: white;
+  padding: 5px 10px;
+}
+
 /* Knob Styling */
 
 .frontPanel {

@@ -1,7 +1,6 @@
 import "./App.css";
 
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import PlayBtn from "./components/PlayBtn";
 import OscSlider from "./components/OscSlider";

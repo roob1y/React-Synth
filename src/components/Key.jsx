@@ -2,26 +2,17 @@ import React, { useState, useEffect } from "react";
 
 export default function Key({
   note,
-  freq,
-  setFreq,
-  setKeyClicked,
   currentNote,
   detectKeyDown,
   detectKeyUp,
-  playSound,
-  actx,
-  setCurrentNote
 }) {
   const [showNote, setShowNote] = useState(true);
 
   function handleMouseDown() {
-    setFreq(freq);
-    setKeyClicked(true);
     detectKeyDown({ key: note, code: "onScreenKey" }, currentNote);
   }
 
   function handleMouseUp() {
-    setKeyClicked(false);
     detectKeyUp({ key: note, code: "onScreenKey" }, currentNote);
   }
 

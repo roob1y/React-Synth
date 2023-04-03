@@ -4,8 +4,6 @@ import { NOTES } from "../global/constants";
 
 export default function Keyboard() {
   const [actx, setAudioContext] = useState(null);
-  const [freq, setFreq] = useState(null);
-  const [keyClicked, setKeyClicked] = useState(false);
   const [currentNote, setCurrentNote] = useState(null);
 
   const middleA = 440;
@@ -102,16 +100,10 @@ export default function Keyboard() {
           return (
             <Key
               note={note}
-              freq={NOTES[note]}
               key={i}
-              setFreq={setFreq}
-              setKeyClicked={setKeyClicked}
               detectKeyDown={detectKeyDown}
               detectKeyUp={detectKeyUp}
               currentNote={currentNote}
-              playSound={playSound}
-              actx={actx}
-              setCurrentNote={setCurrentNote}
             />
           );
         })}

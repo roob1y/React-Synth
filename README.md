@@ -101,3 +101,5 @@ degrees => 0 - 360 (number)
 ### making computer keyboard work with audio web api
 
 I have created some code to use the keyboard using event listeners  on key down and up events. I have an issue where the audio cuts after after too many presses are made consecutively. I hope to sort this bug out soon.
+
+I managed to get my synth to have both onscreen and computer keyboard to play notes together using the same audio context api.
